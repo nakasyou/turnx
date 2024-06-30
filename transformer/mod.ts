@@ -1,5 +1,6 @@
 import { transformHTML } from './html.ts'
 import { IS_ESM_QUERY, transformJS } from './javascript/mod.ts'
+import { toProxyURL } from './utils.ts'
 
 export interface TransformData {
   searchParams: URLSearchParams
@@ -22,7 +23,7 @@ export const transform = async (
     res = new Response(null, {
       status: input.status,
       headers: {
-        Location: `/?url=${target}`,
+        Location: toProxyURL(target),
       },
     })
   } else if (mimeType?.startsWith('text/html')) {
@@ -34,5 +35,14 @@ export const transform = async (
   } else {
     res = input
   }
-  return res
+
+  const headers = new Headers(res.headers)
+  headers.delete('content-security-policy') // TODO
+  headers.delete('Cache-Control') // for dev
+
+  return new Response(res.body, {
+    headers,
+    status: res.status ?? 200,
+    statusText: res.statusText,
+  })
 }

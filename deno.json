@@ -6,6 +6,7 @@
     "@b-fuze/deno-dom": "jsr:@b-fuze/deno-dom@^0.1.47",
     "@babel/core": "npm:@babel/core@^7.24.7",
     "@hono/hono": "jsr:@hono/hono@^4.4.9",
+    "@std/path": "jsr:@std/path@^0.225.2",
     "esbuild": "npm:esbuild@^0.21.5",
     "esbuild-wasm": "npm:esbuild-wasm@^0.21.5"
   },

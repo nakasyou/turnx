@@ -4,7 +4,10 @@
     "specifiers": {
       "jsr:@b-fuze/deno-dom@^0.1.47": "jsr:@b-fuze/deno-dom@0.1.47",
       "jsr:@hono/hono@^4.4.9": "jsr:@hono/hono@4.4.9",
+      "jsr:@std/assert@^0.226.0": "jsr:@std/assert@0.226.0",
+      "jsr:@std/path@^0.225.2": "jsr:@std/path@0.225.2",
       "npm:@babel/core@^7.24.7": "npm:@babel/core@7.24.7",
+      "npm:@types/babel__core": "npm:@types/babel__core@7.20.5",
       "npm:esbuild@^0.21.5": "npm:esbuild@0.21.5"
     },
     "jsr": {
@@ -13,6 +16,15 @@
       },
       "@hono/hono@4.4.9": {
         "integrity": "a25d6df9568d6257bb1a3f2452aab864a0c3876c552d01953c664b7fc811d781"
+      },
+      "@std/assert@0.226.0": {
+        "integrity": "0dfb5f7c7723c18cec118e080fec76ce15b4c31154b15ad2bd74822603ef75b3"
+      },
+      "@std/path@0.225.2": {
+        "integrity": "0f2db41d36b50ef048dcb0399aac720a5348638dd3cb5bf80685bf2a745aa506",
+        "dependencies": [
+          "jsr:@std/assert@^0.226.0"
+        ]
       }
     },
     "npm": {
@@ -305,6 +317,35 @@
           "@jridgewell/sourcemap-codec": "@jridgewell/sourcemap-codec@1.4.15"
         }
       },
+      "@types/babel__core@7.20.5": {
+        "integrity": "sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==",
+        "dependencies": {
+          "@babel/parser": "@babel/parser@7.24.7",
+          "@babel/types": "@babel/types@7.24.7",
+          "@types/babel__generator": "@types/babel__generator@7.6.8",
+          "@types/babel__template": "@types/babel__template@7.4.4",
+          "@types/babel__traverse": "@types/babel__traverse@7.20.6"
+        }
+      },
+      "@types/babel__generator@7.6.8": {
+        "integrity": "sha512-ASsj+tpEDsEiFr1arWrlN6V3mdfjRMZt6LtK/Vp/kreFLnr5QH5+DhvD5nINYZXzwJvXeGq+05iUXcAzVrqWtw==",
+        "dependencies": {
+          "@babel/types": "@babel/types@7.24.7"
+        }
+      },
+      "@types/babel__template@7.4.4": {
+        "integrity": "sha512-h/NUaSyG5EyxBIp8YRxo4RMe2/qQgvyowRwVMzhYhBCONbW8PUsg4lkFMrhgZhUe5z3L3MiLDuvyJ/CaPa2A8A==",
+        "dependencies": {
+          "@babel/parser": "@babel/parser@7.24.7",
+          "@babel/types": "@babel/types@7.24.7"
+        }
+      },
+      "@types/babel__traverse@7.20.6": {
+        "integrity": "sha512-r1bzfrm0tomOI8g1SzvCaQHo6Lcv6zu0EA+W2kHrt8dyrHQxGzBBL4kdkzIS+jBMV+EYcMAEAqXqYaLJq5rOZg==",
+        "dependencies": {
+          "@babel/types": "@babel/types@7.24.7"
+        }
+      },
       "ansi-styles@3.2.1": {
         "integrity": "sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==",
         "dependencies": {
@@ -524,6 +565,7 @@
     "dependencies": [
       "jsr:@b-fuze/deno-dom@^0.1.47",
       "jsr:@hono/hono@^4.4.9",
+      "jsr:@std/path@^0.225.2",
       "npm:@babel/core@^7.24.7",
       "npm:esbuild-wasm@^0.21.5",
       "npm:esbuild@^0.21.5"
